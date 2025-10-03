@@ -1,3 +1,3 @@
-# Terminal IDE Code
+# Terminal IDE Code Readme
 
-This Contains Terminal IDE Code
+TODO: Clean this
