@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-vscode.vscode-typescript-next",
+    "ms-vscode.live-server",
+    "vscodevim.vim"
+  ],
+  "cloudide": {
+    "importSource": "sample",
+    "importedAt": "2025-09-21T23:30:55.124872",
+    "note": "Extensions imported from user's local installation"
+  }
+}
