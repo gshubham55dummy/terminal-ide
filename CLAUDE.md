@@ -2,7 +2,7 @@
 
 This repository contains sample applications demonstrating Visual Studio Code development workflows, featuring both JavaScript and TypeScript implementations of Node.js/Express web applications.
 
-## Repository Structure
+## Top Level Repository Structure
 
 ```
 vscode-samples/
