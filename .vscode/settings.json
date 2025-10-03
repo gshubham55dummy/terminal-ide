@@ -1,0 +1,14 @@
+{
+  "editor.fontSize": 16,
+  "editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace",
+  "editor.theme": "Dark+",
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "files.autoSave": "afterDelay",
+  "cloudide.workspace.autoApplySettings": true,
+  "cloudide.workspace.importSource": "sample",
+  "cloudide.workspace.importedAt": "2025-09-21T23:30:55.124872",
+  "terminal.integrated.enablePersistentSessions": true,
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose"
+}

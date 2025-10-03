@@ -1,0 +1,10 @@
+{
+  "note": "User's imported keybindings (for reference)",
+  "source": "sample",
+  "keybindings": [
+    {
+      "key": "cmd+shift+p",
+      "command": "workbench.action.showCommands"
+    }
+  ]
+}
