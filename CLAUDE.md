@@ -14,7 +14,7 @@ vscode-samples/
 └── README.md                   # Project documentation
 ```
 
-## Very Important Projects
+## Very Very Important Projects
 
 ### 1. node-express-javascript
 
