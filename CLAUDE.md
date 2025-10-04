@@ -16,7 +16,7 @@ vscode-samples/
 
 ## Very Very Important Projects
 
-### 1. node-express-javascript
+### node-express-javascript section
 
 A Node.js Express application written in JavaScript.
 
