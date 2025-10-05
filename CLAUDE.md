@@ -2,7 +2,7 @@
 
 A collection of sample applications demonstrating Visual Studio Code configuration and debugging features for Node.js applications, available in both JavaScript and TypeScript implementations.
 
-## Project Overview
+## Project Highlights
 
 This repository contains two parallel implementations of a Node.js Express web application:
 - **node-express-javascript**: JavaScript implementation
@@ -10,7 +10,7 @@ This repository contains two parallel implementations of a Node.js Express web a
 
 Both implementations showcase VS Code's debugging capabilities, task automation with Gulp, and proper project structure for Express applications.
 
-## Repository Structure
+## Repository Structure from the top
 
 ```
 .
@@ -207,7 +207,7 @@ gulp                # Start browser-sync + watch
 | Debug config | VS Code launch configurations | `.vscode/launch.json` |
 | Tests | Mocha test suite | `tests/test.js` / `tests/test.ts` |
 
-## Environment Variables
+## All Environment Variables
 
 - `PORT`: Server port (default: 3000)
 - `NODE_ENV`: Environment mode ('development' or 'production')
