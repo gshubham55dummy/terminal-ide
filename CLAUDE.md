@@ -132,7 +132,7 @@ Both projects include comprehensive VS Code settings in `.vscode/`:
 - TypeScript version of test suite
 - Requires compilation before running
 
-### Additional Tools
+### Additional Tools (less important)
 
 **PR Monitoring Script** (`monitor_script.sh`)
 - Monitors GitHub PR comments for 48 hours
