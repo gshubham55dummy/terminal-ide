@@ -2,7 +2,7 @@
 
 A collection of sample applications demonstrating Visual Studio Code configuration and debugging features for Node.js applications, available in both JavaScript and TypeScript implementations.
 
-## Project Highlights
+## Project Highlights (important)
 
 This repository contains two parallel implementations of a Node.js Express web application:
 - **node-express-javascript**: JavaScript implementation
