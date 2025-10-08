@@ -41,7 +41,7 @@ Both implementations showcase VS Code's debugging capabilities, task automation 
 └── README.md                    # Quick start guide
 ```
 
-## Components
+## Important Components
 
 ### JavaScript Application (node-express-javascript)
 
