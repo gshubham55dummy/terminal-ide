@@ -10,7 +10,7 @@ This repository contains two parallel implementations of a Node.js Express web a
 
 Both implementations showcase VS Code's debugging capabilities, task automation with Gulp, and proper project structure for Express applications.
 
-## Repository Structure from the top
+## (important) Repository Structure from the top
 
 ```
 .
