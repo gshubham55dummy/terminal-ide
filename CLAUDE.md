@@ -58,7 +58,7 @@ Both implementations showcase VS Code's debugging capabilities, task automation 
 - Error handling for EACCES and EADDRINUSE
 - Server event listeners
 
-**Routes**
+**Routes Info**
 - `/` - Home page (routes/index.js:17) - renders "Visual Studio Code!" title
 - `/users` - Users endpoint (routes/users.js:5) - returns placeholder response
 
