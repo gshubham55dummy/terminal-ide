@@ -96,7 +96,7 @@ Both implementations showcase VS Code's debugging capabilities, task automation 
 - Typed function signatures for normalizePort, onError, onListening
 - Identical functionality to JavaScript version
 
-**Build System**
+**Build System Specs**
 - TypeScript compilation via `npm run compile`
 - Separate tsconfig.json for source and tests
 - Output directory: `./out/`
