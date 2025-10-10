@@ -91,7 +91,7 @@ Both implementations showcase VS Code's debugging capabilities, task automation 
 - Strong typing with @types packages
 - ES6 module imports
 
-**Server Entry Point** (`src/www.ts`)
+**Server Entry Point (imp)** (`src/www.ts`)
 - Type-safe server initialization
 - Typed function signatures for normalizePort, onError, onListening
 - Identical functionality to JavaScript version
