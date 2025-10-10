@@ -10,9 +10,9 @@ Monitor and resolve PR comments automatically.
 **Your Mission:**
 1. **Identify PR**: Determine the pull request to monitor. Use $1 if provided, otherwise infer from conversation history above. If no PR can be identified, inform me.
 
-2. **Continuous Monitoring**: Monitor for exactly 48 hours (48 iterations, 1 hour each):
-   - Initialize hour counter (start at hour 1)
-   - For each hour (1-48):
+2. **Continuous Monitoring**: Monitor for exactly 48 hours (checking every 30 seconds):
+   - Initialize check counter
+   - For each check iteration:
 
      **Step A: Read and Process Comments**
      - Use 'gh' commands to fetch PR comments and review comments
@@ -24,12 +24,11 @@ Monitor and resolve PR comments automatically.
        - Reply to comment when resolved
 
      **Step B: Sleep and Wait**
-     - Sleep for exactly 1 hour using `sleep 3600` in foreground
-     - Use bash timeout of 3600 seconds for the sleep command
+     - Sleep for exactly 30 seconds using `sleep 30` in foreground
 
      **Step C: Update Counter and Display Progress**
      - Increase counter by 1
-     - Print current progress (e.g., "Hour 15/48")
+     - Print current progress every hour (e.g., "Hour 15/48")
      - Continue to next iteration
 
    - **IMPORTANT**: Only exit after completing all 48 hours of monitoring
