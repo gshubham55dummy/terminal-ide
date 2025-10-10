@@ -59,3 +59,5 @@ gh api repos/OWNER/REPO/pulls/[PR_NUMBER]/comments | jq '.[] | select(.created_a
 ```
 
 Please start now by identifying the PR and checking for existing comments that need resolution. Do not write any code, instead use monitor_script.sh to monitor, run this in FOREGROUND and with 48h timelimit always.
+
+Please first update monitor_script.sh to the right version and then run it.

@@ -1,51 +1,82 @@
 #!/bin/bash
 
-# PR Monitoring Script
-PR_URL="https://github.com/gshubham55/terminal-ide/pull/1"
-PR_NUMBER="1"
-REPO="gshubham55/terminal-ide"
+# 48-hour PR monitoring script
+PR_NUMBER="${1:-3}"  # Default to PR #3, or use argument
+REPO_OWNER="gshubham55"
+REPO_NAME="terminal-ide"
 
-echo "🔄 Starting PR Comment Monitor for ${PR_URL}"
-echo "Duration: 48 hours (1 hour intervals)"
-echo "================================================"
+start_time=$(date +%s)
+end_time=$((start_time + 172800))  # 48 hours in seconds
 
-for hour in {1..48}; do
+echo "🚀 Starting 48-hour monitoring for PR #$PR_NUMBER"
+echo "Repository: $REPO_OWNER/$REPO_NAME"
+echo "Current time: $(date)"
+echo "End time: $(date -d @$end_time 2>/dev/null || date -r $end_time)"
+echo "Branch: $(git branch --show-current)"
+echo ""
+
+# Get initial comment baseline
+current_review_comments=$(gh api "repos/$REPO_OWNER/$REPO_NAME/pulls/$PR_NUMBER/comments" --jq '. | length' 2>/dev/null || echo "0")
+current_pr_comments=$(gh pr view "$PR_NUMBER" --json comments --jq '.comments | length' 2>/dev/null || echo "0")
+baseline_total=$((current_review_comments + current_pr_comments))
+
+echo "📊 Initial baseline:"
+echo "   Review comments: $current_review_comments"
+echo "   PR comments: $current_pr_comments"
+echo "   Total comments: $baseline_total"
+echo ""
+
+hour_count=0
+check_count=0
+comments_processed=0
+
+while [ $(date +%s) -lt $end_time ]; do
+  current_time=$(date +%s)
+  remaining=$((end_time - current_time))
+  hours_remaining=$((remaining / 3600))
+  minutes_remaining=$(((remaining % 3600) / 60))
+
+  # Increment check counter
+  check_count=$((check_count + 1))
+
+  # Show hour progress every 120 checks (1 hour)
+  if [ $((check_count % 120)) -eq 0 ]; then
+    hour_count=$((check_count / 120))
+    echo "📊 Hour $hour_count/48: ${hours_remaining}h ${minutes_remaining}m remaining | Comments processed: $comments_processed"
+  fi
+
+  # Check current comment counts
+  new_review_comments=$(gh api "repos/$REPO_OWNER/$REPO_NAME/pulls/$PR_NUMBER/comments" --jq '. | length' 2>/dev/null || echo "$current_review_comments")
+  new_pr_comments=$(gh pr view "$PR_NUMBER" --json comments --jq '.comments | length' 2>/dev/null || echo "$current_pr_comments")
+  new_total=$((new_review_comments + new_pr_comments))
+
+  # Check if comment count increased
+  if [ $new_total -gt $baseline_total ]; then
+    added_comments=$((new_total - baseline_total))
+    comments_processed=$((comments_processed + added_comments))
     echo ""
-    echo "⏰ Hour ${hour}/48 - $(date)"
-    echo "------------------------------------------------"
-    
-    # Fetch PR comments
-    echo "📥 Fetching PR comments..."
-    gh pr view ${PR_NUMBER} --repo ${REPO} --json comments,reviews > /tmp/pr_data_${hour}.json 2>/dev/null
-    
-    if [ $? -eq 0 ]; then
-        # Check for new comments
-        COMMENT_COUNT=$(jq '.comments | length' /tmp/pr_data_${hour}.json 2>/dev/null || echo "0")
-        REVIEW_COUNT=$(jq '.reviews | length' /tmp/pr_data_${hour}.json 2>/dev/null || echo "0")
-        
-        echo "💬 Found ${COMMENT_COUNT} general comments and ${REVIEW_COUNT} reviews"
-        
-        # Display any comments found
-        if [ "${COMMENT_COUNT}" != "0" ]; then
-            echo "Comments:"
-            jq -r '.comments[] | "  - [\(.author.login)]: \(.body)"' /tmp/pr_data_${hour}.json 2>/dev/null
-        fi
-        
-        if [ "${REVIEW_COUNT}" != "0" ]; then
-            echo "Reviews:"
-            jq -r '.reviews[] | "  - [\(.author.login)] \(.state): \(.body // "No comment")"' /tmp/pr_data_${hour}.json 2>/dev/null
-        fi
-    else
-        echo "⚠️  Failed to fetch PR data"
-    fi
-    
-    # Only sleep if not the last iteration
-    if [ ${hour} -lt 48 ]; then
-        echo "😴 Sleeping for 1 hour..."
-        sleep 3600
-    fi
+    echo "🚨 NEW COMMENT(S) DETECTED!"
+    echo "   Previous total: $baseline_total"
+    echo "   Current total: $new_total"
+    echo "   New comments: $added_comments"
+    echo "   Total processed: $comments_processed"
+    echo "   Remaining time: ${hours_remaining}h ${minutes_remaining}m"
+    echo ""
+    echo "Exiting to allow Claude to process new comment(s)..."
+    exit 0
+  fi
+
+  # No new comments, sleep for 30 seconds
+  sleep 30
 done
 
 echo ""
-echo "✅ Monitoring complete: 48/48 hours"
-echo "================================================"
+echo "🎉 48-HOUR MONITORING COMPLETED!"
+echo ""
+echo "📊 Final Report:"
+echo "⏰ Monitoring duration: 48 hours (COMPLETE)"
+echo "💬 Total comments processed: $comments_processed"
+echo "⏱️  Total hours monitored: $hour_count/48"
+echo "✅ Monitoring mission accomplished!"
+echo ""
+exit 0
