@@ -1,4 +1,4 @@
-# vscode-samples
+# vscode-samples reasdme
 
 A collection of sample applications demonstrating Visual Studio Code configuration and debugging features for Node.js applications, available in both JavaScript and TypeScript implementations.
 
