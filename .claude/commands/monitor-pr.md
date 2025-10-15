@@ -36,7 +36,8 @@ Monitor and resolve PR comments automatically.
 
 3. **Smart Resolution**:
    - Read relevant code files for context
-   - Make targeted, thoughtful changes
+   - **Think critically**: Analyze each comment deeply before acting. Push back if comments don't make sense, contradict best practices, or would introduce bugs
+   - Make targeted, thoughtful changes only when comments are valid
    - Run available tests before committing
    - Write clear commit messages
    - Handle multiple comments efficiently
