@@ -1,3 +1,3 @@
-# Terminal IDE Code Readme
+# Terminal IDE Code
 
-TODO: Clean this
+A terminal-based IDE code repository for development workflows.
