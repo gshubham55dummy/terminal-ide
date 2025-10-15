@@ -1,13 +1,73 @@
-# 🖥️ Terminal IDE Code
+# Node.js Express Sample Applications
 
-> A powerful terminal-based IDE code repository for modern development workflows
+This repository contains sample Node.js Express applications demonstrating best practices for building web applications with Express framework in both JavaScript and TypeScript.
 
-## ✨ Overview
+## 📁 Project Structure
 
-This repository provides a comprehensive terminal-based integrated development environment designed to streamline your development process directly from the command line.
+```
+.
+├── node-express-javascript/    # Express app using JavaScript
+├── node-express-typescript/    # Express app using TypeScript
+├── monitor_script.sh           # PR monitoring script
+└── README.md                   # This file
+```
 
-## 🚀 Features
+## 🚀 Getting Started
 
-- **Terminal-Native Development** - Work efficiently without leaving your terminal
-- **Workflow Optimization** - Streamlined tools for enhanced productivity
-- **Developer-Friendly** - Built with developers in mind
+### JavaScript Version
+
+```bash
+cd node-express-javascript
+npm install
+npm start
+```
+
+The JavaScript application will be running at `http://localhost:3000`
+
+### TypeScript Version
+
+```bash
+cd node-express-typescript
+npm install
+npm run compile
+npm start
+```
+
+The TypeScript application will be running at `http://localhost:3000`
+
+## 🧪 Testing
+
+Both projects include test suites:
+
+```bash
+# JavaScript tests
+cd node-express-javascript
+npm test
+
+# TypeScript tests
+cd node-express-typescript
+npm run compiletests
+npm test
+```
+
+## 🛠️ Technologies
+
+- **Express 4.x** - Fast, unopinionated web framework for Node.js
+- **Jade** - Template engine for Node.js
+- **Mocha** - Testing framework
+- **Gulp** - Task runner for build automation
+- **TypeScript** - (TypeScript version only) Strongly typed JavaScript
+
+## 📝 Features
+
+- RESTful routing structure
+- Template rendering with Jade
+- Static file serving
+- Error handling middleware
+- Development and production configurations
+- Automated testing with Mocha
+- Build automation with Gulp
+
+## 📄 License
+
+See [LICENSE](LICENSE) file for details.
