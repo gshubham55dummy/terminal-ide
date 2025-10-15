@@ -8,7 +8,7 @@
   "files.autoSave": "afterDelay",
   "cloudide.workspace.autoApplySettings": true,
   "cloudide.workspace.importSource": "sample",
-  "cloudide.workspace.importedAt": "2025-09-21T23:30:55.124872",
+  "cloudide.workspace.importedAt": "2025-10-13T00:54:03.890878",
   "terminal.integrated.enablePersistentSessions": true,
   "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose"
 }
