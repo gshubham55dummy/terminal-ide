@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 48-hour PR monitoring script
-PR_NUMBER="${1:-3}"  # Default to PR #3, or use argument
-REPO_OWNER="gshubham55"
+PR_NUMBER="${1:-1}"  # Default to PR #1, or use argument
+REPO_OWNER="gshubham55dummy"
 REPO_NAME="terminal-ide"
 
 start_time=$(date +%s)
