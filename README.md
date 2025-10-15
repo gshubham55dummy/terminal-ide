@@ -22,6 +22,12 @@ npm install
 npm start
 ```
 
+To format code with Prettier:
+```bash
+npm run format        # Format all files
+npm run format:check  # Check formatting without making changes
+```
+
 The JavaScript application will be running at `http://localhost:3000`
 
 ### TypeScript Version
@@ -31,6 +37,12 @@ cd node-express-typescript
 npm install
 npm run compile
 npm start
+```
+
+To format code with Prettier:
+```bash
+npm run format        # Format all files
+npm run format:check  # Check formatting without making changes
 ```
 
 The TypeScript application will be running at `http://localhost:3000`
@@ -56,6 +68,7 @@ npm test
 - **Jade** - Template engine for Node.js
 - **Mocha** - Testing framework
 - **Gulp** - Task runner for build automation
+- **Prettier** - Code formatter for consistent styling
 - **TypeScript** - (TypeScript version only) Strongly typed JavaScript
 
 ## 📝 Features

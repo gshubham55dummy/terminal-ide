@@ -7,7 +7,9 @@
     "start": "node ./out/www.js",
     "test": "mocha ./tests/out/test.js",
     "compile": "node ./node_modules/typescript/bin/tsc -p ./src",
-    "compiletests": "node ./node_modules/typescript/bin/tsc -p ./tests"
+    "compiletests": "node ./node_modules/typescript/bin/tsc -p ./tests",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,md}\""
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -42,6 +44,7 @@
     "marked": "^0.3.6",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
+    "prettier": "^3.0.0",
     "typescript": "^2.2.1"
   }
 }
